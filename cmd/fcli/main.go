@@ -20,12 +20,11 @@ import (
 )
 
 var (
-	defaultDBTimeout   = 10 * time.Second
-	defaultPubPass     = "/flc/public"
-	defaultWordList    = wordlists.English
-	network            = &chaincfg.MainNetParams
-	defaultElectumPort = 50001
-	defaultAppName     = "flcwallet"
+	defaultDBTimeout = 10 * time.Second
+	defaultPubPass   = "/flc/public"
+	defaultWordList  = wordlists.English
+	network          = &chaincfg.MainNetParams
+	defaultAppName   = "flcwallet"
 
 	defaultAccountID   uint32 = 1
 	defaultAccountName string = "myfloki"
