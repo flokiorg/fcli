@@ -9,7 +9,7 @@ import (
 	"log"
 	"strings"
 
-	. "github.com/flokiorg/fcli/common"
+	. "github.com/flokiorg/fcli/utils"
 	"github.com/flokiorg/go-flokicoin/chaincfg"
 	"github.com/flokiorg/go-flokicoin/chainutil/hdkeychain"
 	"github.com/flokiorg/walletd/waddrmgr"
@@ -102,6 +102,8 @@ func (wch *WalletCliHandler) RestoreWallet() {
 }
 
 func (wch *WalletCliHandler) ProcessCommand() bool {
+
+	// wallet commands
 	exists, err := wch.WalletExists()
 	if err != nil {
 		log.Fatalf("unable to load wallet: %v", err)
@@ -114,10 +116,6 @@ func (wch *WalletCliHandler) ProcessCommand() bool {
 		log.Fatalf("opening failed: %v", err)
 	}
 
-	if wch.Synchronize(); err != nil {
-		log.Fatalf("unable to sync: %v", err)
-	}
-
 	if wch.cfg.NewAddress {
 		wch.GenerateNewAddress()
 	} else if wch.cfg.ListAddrs {
@@ -126,15 +124,18 @@ func (wch *WalletCliHandler) ProcessCommand() bool {
 		wch.ShowXpub(wch.cfg.XpubBranch)
 	} else if wch.cfg.ListAccounts {
 		wch.ListAccounts()
-	} else if wch.cfg.Import {
-		wch.ImportWithWIF()
 	} else if wch.cfg.Balance {
 		wch.Balance()
-	} else if wch.cfg.Sync {
-		wch.Sync()
 	} else {
 		wch.Dashboard(wch.ChainParams(), wch.cfg)
 	}
+
+	// reported
+	//  else if wch.cfg.Import {
+	// wch.ImportWithWIF()
+	// } else if wch.cfg.Sync {
+	// 	wch.Sync()
+	// }
 
 	return true
 }

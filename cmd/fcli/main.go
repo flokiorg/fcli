@@ -5,12 +5,12 @@
 package main
 
 import (
-	"log"
+	"fmt"
 	"os"
 	"time"
 
 	"github.com/flokiorg/fcli/cli"
-	. "github.com/flokiorg/fcli/common"
+	. "github.com/flokiorg/fcli/utils"
 	"github.com/flokiorg/go-flokicoin/chaincfg"
 	"github.com/flokiorg/go-flokicoin/chainutil"
 	"github.com/flokiorg/walletd/walletdb/bdb"
@@ -44,6 +44,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if cfg.Version {
+		fmt.Println("Version:", Version)
+		return
+	}
+
 	// Register the backend database
 	bdb.Register()
 
@@ -62,10 +67,6 @@ func main() {
 
 	if opt := parser.FindOptionByShortName('t'); !optionDefined(opt) {
 		cfg.DBTimeout = defaultDBTimeout
-	}
-
-	if opt := parser.FindOptionByShortName('e'); !optionDefined(opt) {
-		log.Fatal("electserver is required")
 	}
 
 	if opt := parser.FindOptionByShortName('d'); !optionDefined(opt) {

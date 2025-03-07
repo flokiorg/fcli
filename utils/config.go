@@ -2,13 +2,13 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-package common
+package utils
 
 import "time"
 
 type Config struct {
-	Create         bool          `short:"c" long:"create" description:"Create a new wallet (command)"`
-	Restore        bool          `short:"r" long:"restore" description:"Restore a wallet using mnemonic (command)"`
+	Create         bool          `short:"c" long:"create" description:"Create a new wallet"`
+	Restore        bool          `short:"r" long:"restore" description:"Restore a wallet using mnemonic"`
 	Dir            string        `short:"d" long:"dir" description:"Directory for the wallet.db"`
 	NewAddress     bool          `short:"n" long:"newaddress" description:"Create a new address (command)"`
 	ListAddrs      bool          `short:"a" long:"listaddrs" description:"List all available addresses."`
@@ -21,9 +21,11 @@ type Config struct {
 	PublicPassword string        `long:"pubpass" description:"Public password used to encrypt public data."`
 	DBTimeout      time.Duration `short:"t" long:"timeout" description:"Timeout duration (in seconds) for database connections."`
 	ElectrumServer string        `short:"e" long:"electserver" description:"Electrum server host:port"`
-	Import         bool          `long:"import" description:"Import command (default: 2147483647)"`
 	AccountID      uint32        `long:"id" description:"Account ID (default is used instead)"`
 	AccountName    string        `long:"name" description:"Account Name (default is used instead)"`
-	Balance        bool          `short:"b" description:"Balance command"`
-	Sync           bool          `short:"s" description:"Sync command"`
+	Balance        bool          `short:"b" description:"Show balance"`
+	// reported
+	// Import         bool          `long:"import" description:"Import command (default: 2147483647)"`
+	// Sync           bool          `short:"s" description:"Sync command"`
+	Version bool `short:"v" description:"Print version"`
 }

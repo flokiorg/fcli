@@ -14,7 +14,7 @@ import (
 	"syscall"
 	"time"
 
-	. "github.com/flokiorg/fcli/common"
+	. "github.com/flokiorg/fcli/utils"
 	"github.com/flokiorg/go-flokicoin/chaincfg"
 	"github.com/flokiorg/go-flokicoin/chainjson"
 	"github.com/flokiorg/go-flokicoin/chainutil"
@@ -167,6 +167,14 @@ func (wch *WalletCliHandler) ShowXpub(branch uint32) {
 }
 
 func (wch *WalletCliHandler) Dashboard(network *chaincfg.Params, cfg *Config) {
+
+	if _, err := ValidateAndNormalizeURI(wch.cfg.ElectrumServer, 80); err != nil {
+		log.Fatalf("invalid electrum server URL: %v", err)
+	}
+
+	if err := wch.Synchronize(); err != nil {
+		log.Fatalf("unable to sync: %v", err)
+	}
 
 	log.Printf("Network: %s", wch.ChainParams().Name)
 	log.Printf("Account ID: %d", wch.cfg.AccountID)
