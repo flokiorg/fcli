@@ -172,7 +172,7 @@ func (wch *WalletCliHandler) Dashboard(network *chaincfg.Params, cfg *Config) {
 		log.Fatalf("invalid electrum server URL: %v", err)
 	}
 
-	if err := wch.Synchronize(); err != nil {
+	if _, err := wch.Synchronize(); err != nil {
 		log.Fatalf("unable to sync: %v", err)
 	}
 
