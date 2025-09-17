@@ -252,8 +252,7 @@ func (wch *WalletCliHandler) Dashboard() {
 func (wch *WalletCliHandler) Balance() {
 	balance, err := wch.CalculateAccountBalances(wch.cfg.AccountID, 0)
 	if err != nil {
-		log.Printf("unable to fetch balance: %v\n", err)
-		return
+		log.Fatalf("unable to fetch balance: %v\n", err)
 	}
 	log.Printf("balance: %f", balance.Total.ToFLC())
 }
