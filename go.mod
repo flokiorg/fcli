@@ -3,11 +3,11 @@ module github.com/flokiorg/fcli
 go 1.26.1
 
 require (
-	github.com/flokiorg/go-flokicoin v0.25.13-alpha
-	github.com/flokiorg/walletd v0.1.8-beta
+	github.com/flokiorg/go-flokicoin v0.26.0-alpha
+	github.com/flokiorg/walletd v0.2.0-beta
 	github.com/jessevdk/go-flags v1.6.1
 	github.com/rs/zerolog v1.34.0
-	golang.org/x/term v0.37.0
+	golang.org/x/term v0.43.0
 )
 
 require (
@@ -27,15 +27,15 @@ require (
 	github.com/lightningnetwork/lnd/tlv v1.3.1 // indirect
 	github.com/stretchr/testify v1.11.1 // indirect
 	go.etcd.io/bbolt v1.4.3 // indirect
-	golang.org/x/crypto v0.45.0 // indirect
+	golang.org/x/crypto v0.52.0 // indirect
 	golang.org/x/exp v0.0.0-20250811191247-51f88131bc50 // indirect
-	golang.org/x/sync v0.18.0 // indirect
-	golang.org/x/sys v0.38.0 // indirect
+	golang.org/x/sync v0.20.0 // indirect
+	golang.org/x/sys v0.45.0 // indirect
 )
 
 require (
 	github.com/decred/dcrd/crypto/blake256 v1.1.0 // indirect
-	github.com/flokiorg/flokicoin-neutrino v0.16.6-beta // indirect
+	github.com/flokiorg/flokicoin-neutrino v0.17.0-beta // indirect
 	github.com/lightninglabs/gozmq v0.0.0-20191113021534-d20a764486bf // indirect
 	github.com/lightningnetwork/lnd/ticker v1.1.1 // indirect
 	github.com/mattn/go-colorable v0.1.14 // indirect
