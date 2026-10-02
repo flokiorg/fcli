@@ -1,10 +1,10 @@
 module github.com/flokiorg/fcli
 
-go 1.26.5
+go 1.26.8
 
 require (
-	github.com/flokiorg/go-flokicoin v0.26.0-alpha
-	github.com/flokiorg/walletd v0.2.0-beta
+	github.com/flokiorg/go-flokicoin v0.26.2
+	github.com/flokiorg/walletd v0.2.2
 	github.com/jessevdk/go-flags v1.6.1
 	github.com/rs/zerolog v1.34.0
 	golang.org/x/term v0.43.0
