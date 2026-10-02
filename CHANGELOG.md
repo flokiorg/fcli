@@ -4,6 +4,17 @@
 
 ### Changed
 
+- Built with Go 1.26.8, up from 1.26.5, which closes four reachable stdlib
+  vulnerabilities (GO-2026-6218 `net/url`, GO-2026-6090 `crypto/tls`,
+  GO-2026-5972 `encoding/asn1`, GO-2026-5026 `net/http`).
+- Updated every flokiorg dependency to its current release. `govulncheck` reports no reachable
+  vulnerabilities.
+- The release now publishes a multi-arch container image to
+  `ghcr.io/flokiorg/fcli`, and every push to the default branch publishes an
+  `:edge` image.
+
+### Changed
+
 - Built with Go 1.26.5, picking up the stdlib security fixes released since 1.26.1. (#3)
 
 ## [0.1.6-beta]
