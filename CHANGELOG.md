@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.8-rc.1]
+
+### Changed
+
+- Updates `go-flokicoin` to v0.26.4-rc.1 and `walletd` to v0.2.4-rc.1, taking the
+  latest Flokicoin libraries. (#8)
+
 ## [0.1.7]
 
 ### Changed
@@ -12,10 +19,6 @@
 - The release now publishes a multi-arch container image to
   `ghcr.io/flokiorg/fcli`, and every push to the default branch publishes an
   `:edge` image.
-
-### Changed
-
-- Built with Go 1.26.5, picking up the stdlib security fixes released since 1.26.1. (#3)
 
 ## [0.1.6-beta]
 
